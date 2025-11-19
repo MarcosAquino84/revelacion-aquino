@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revelación Aquino Enriquez</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fce4ec 0%, #e3f2fd 50%, #fce4ec 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 40px 30px;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Globos flotantes */
+        .balloon {
+            position: absolute;
+            width: 40px;
+            height: 50px;
+            border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .balloon::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 20px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .balloon-1 {
+            background: linear-gradient(135deg, #ff9eb5 0%, #ff6b8a 100%);
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .balloon-2 {
+            background: linear-gradient(135deg, #81d4fa 0%, #4fc3f7 100%);
+            top: 15%;
+            right: 8%;
+            animation-delay: 0.5s;
+        }
+
+        .balloon-3 {
+            background: linear-gradient(135deg, #ff9eb5 0%, #ff6b8a 100%);
+            bottom: 20%;
+            left: 3%;
+            animation-delay: 1s;
+        }
+
+        .balloon-4 {
+            background: linear-gradient(135deg, #81d4fa 0%, #4fc3f7 100%);
+            bottom: 25%;
+            right: 5%;
+            animation-delay: 1.5s;
+        }
+
+        .balloon-5 {
+            background: linear-gradient(135deg, #81d4fa 0%, #4fc3f7 100%);
+            top: 40%;
+            left: -5px;
+            width: 30px;
+            height: 38px;
+            animation-delay: 2s;
+        }
+
+        .balloon-6 {
+            background: linear-gradient(135deg, #ff9eb5 0%, #ff6b8a 100%);
+            top: 50%;
+            right: -5px;
+            width: 30px;
+            height: 38px;
+            animation-delay: 2.5s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(-5deg);
+            }
+            50% {
+                transform: translateY(-15px) rotate(5deg);
+            }
+        }
+
+        /* Osito 3D */
+        .bear-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .bear {
+            position: relative;
+            width: 120px;
+            height: 130px;
+        }
+
+        .bear-head {
+            position: absolute;
+            width: 80px;
+            height: 75px;
+            background: linear-gradient(135deg, #d4a574 0%, #c49a6c 100%);
+            border-radius: 50% 50% 45% 45%;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: inset -5px -5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .bear-ear {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: linear-gradient(135deg, #d4a574 0%, #c49a6c 100%);
+            border-radius: 50%;
+            top: -5px;
+        }
+
+        .bear-ear-left {
+            left: 5px;
+        }
+
+        .bear-ear-right {
+            right: 5px;
+        }
+
+        .bear-ear-inner {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: #ffb6c1;
+            border-radius: 50%;
+            top: 5px;
+            left: 5px;
+        }
+
+        .bear-face {
+            position: absolute;
+            top: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .bear-eye {
+            position: absolute;
+            width: 8px;
+            height: 10px;
+            background: #2c1810;
+            border-radius: 50%;
+            animation: blink 3s ease-in-out infinite;
+        }
+
+        .bear-eye-left {
+            left: -15px;
+            top: 0;
+        }
+
+        .bear-eye-right {
+            right: -15px;
+            top: 0;
+        }
+
+        @keyframes blink {
+            0%, 90%, 100% {
+                transform: scaleY(1);
+            }
+            95% {
+                transform: scaleY(0.1);
+            }
+        }
+
+        .bear-nose {
+            position: absolute;
+            width: 15px;
+            height: 12px;
+            background: #2c1810;
+            border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .bear-mouth {
+            position: absolute;
+            width: 20px;
+            height: 10px;
+            border: 2px solid #2c1810;
+            border-top: none;
+            border-radius: 0 0 50% 50%;
+            top: 28px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .bear-body {
+            position: absolute;
+            width: 70px;
+            height: 60px;
+            background: linear-gradient(135deg, #d4a574 0%, #c49a6c 100%);
+            border-radius: 50% 50% 45% 45%;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: inset -5px -5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .bear-belly {
+            position: absolute;
+            width: 45px;
+            height: 40px;
+            background: #f5e6d3;
+            border-radius: 50%;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .bear-arm {
+            position: absolute;
+            width: 20px;
+            height: 35px;
+            background: linear-gradient(135deg, #d4a574 0%, #c49a6c 100%);
+            border-radius: 30px;
+            bottom: 20px;
+        }
+
+        .bear-arm-left {
+            left: 5px;
+            transform: rotate(20deg);
+            animation: wave-left 2s ease-in-out infinite;
+        }
+
+        .bear-arm-right {
+            right: 5px;
+            transform: rotate(-20deg);
+            animation: wave-right 2s ease-in-out infinite;
+        }
+
+        @keyframes wave-left {
+            0%, 100% {
+                transform: rotate(20deg);
+            }
+            50% {
+                transform: rotate(30deg);
+            }
+        }
+
+        @keyframes wave-right {
+            0%, 100% {
+                transform: rotate(-20deg);
+            }
+            50% {
+                transform: rotate(-30deg);
+            }
+        }
+
+        /* Contenido */
+        .title {
+            text-align: center;
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 5px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 1.8em;
+            background: linear-gradient(90deg, #ff6b8a, #4fc3f7, #ff6b8a);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shine 3s linear infinite;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        .question {
+            text-align: center;
+            font-size: 2.5em;
+            margin: 15px 0;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .family-name {
+            text-align: center;
+            font-size: 1.4em;
+            color: #555;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .details {
+            background: linear-gradient(135deg, #fce4ec 0%, #e3f2fd 100%);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        .detail-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .detail-icon {
+            font-size: 1.2em;
+            margin-right: 10px;
+            min-width: 25px;
+        }
+
+        .detail-text {
+            line-height: 1.4;
+        }
+
+        .detail-text strong {
+            color: #333;
+        }
+
+        .confirm-section {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .confirm-text {
+            font-size: 0.9em;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .confirm-deadline {
+            font-size: 0.85em;
+            color: #ff6b8a;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            }
+            50% {
+                box-shadow: 0 4px 25px rgba(37, 211, 102, 0.7);
+            }
+        }
+
+        .whatsapp-icon {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: #999;
+        }
+
+        /* Estrellas decorativas */
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            font-size: 12px;
+            animation: twinkle 2s ease-in-out infinite;
+        }
+
+        .star-1 { top: 5%; left: 20%; animation-delay: 0s; }
+        .star-2 { top: 8%; right: 25%; animation-delay: 0.3s; }
+        .star-3 { bottom: 15%; left: 15%; animation-delay: 0.6s; }
+        .star-4 { bottom: 10%; right: 20%; animation-delay: 0.9s; }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Globos flotantes -->
+        <div class="balloon balloon-1"></div>
+        <div class="balloon balloon-2"></div>
+        <div class="balloon balloon-3"></div>
+        <div class="balloon balloon-4"></div>
+        <div class="balloon balloon-5"></div>
+        <div class="balloon balloon-6"></div>
+
+        <!-- Estrellas -->
+        <div class="stars">
+            <span class="star star-1">✨</span>
+            <span class="star star-2">✨</span>
+            <span class="star star-3">✨</span>
+            <span class="star star-4">✨</span>
+        </div>
+
+        <!-- Osito -->
+        <div class="bear-container">
+            <div class="bear">
+                <div class="bear-head">
+                    <div class="bear-ear bear-ear-left">
+                        <div class="bear-ear-inner"></div>
+                    </div>
+                    <div class="bear-ear bear-ear-right">
+                        <div class="bear-ear-inner"></div>
+                    </div>
+                    <div class="bear-face">
+                        <div class="bear-eye bear-eye-left"></div>
+                        <div class="bear-eye bear-eye-right"></div>
+                        <div class="bear-nose"></div>
+                        <div class="bear-mouth"></div>
+                    </div>
+                </div>
+                <div class="bear-body">
+                    <div class="bear-belly"></div>
+                </div>
+                <div class="bear-arm bear-arm-left"></div>
+                <div class="bear-arm bear-arm-right"></div>
+            </div>
+        </div>
+
+        <!-- Contenido -->
+        <p class="title">Te invitamos a la</p>
+        <h1 class="main-title">Revelación de Sexo</h1>
+        <p class="question">👶 ¿Niño o Niña? 👶</p>
+        <p class="family-name">Familia Aquino Enriquez</p>
+
+        <div class="details">
+            <div class="detail-item">
+                <span class="detail-icon">📅</span>
+                <span class="detail-text"><strong>Fecha:</strong> 6 de Diciembre, 2025</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-icon">⏰</span>
+                <span class="detail-text"><strong>Hora:</strong> 2:30 PM</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-icon">🍽️</span>
+                <span class="detail-text"><strong>Servicio de Alimentos:</strong> 3:00 PM - 4:00 PM</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-icon">📍</span>
+                <span class="detail-text"><strong>Lugar:</strong> Privada Marcos, Edificio E, Depto. 501, Colinas de San José 181, Tlalnepantla, Edo. de Méx.</span>
+            </div>
+        </div>
+
+        <div class="confirm-section">
+            <p class="confirm-text">¡Tu presencia es muy importante para nosotros!</p>
+            <p class="confirm-deadline">Confirmar antes del 1 de Diciembre</p>
+            <a href="https://wa.me/525540678385?text=¡Hola!%20Confirmo%20mi%20asistencia%20a%20la%20Revelación%20Aquino%20Enriquez%20🎀💙" class="whatsapp-btn" target="_blank">
+                <svg class="whatsapp-icon" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                Confirmar Asistencia
+            </a>
+        </div>
+
+        <p class="footer">¡Los esperamos con mucha ilusión! 💕</p>
+    </div>
+</body>
+</html>

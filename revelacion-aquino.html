@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revelación Aquino Enriquez</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #87ceeb 0%, #bde0fe 25%, #f8bbd9 75%, #ff69b4 100%);
+            background-size: 300% 300%;
+            animation: gradientShift 12s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            padding: 20px;
+            position: relative;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Partículas flotantes de fondo */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            animation: particleFloat 20s infinite;
+        }
+
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 25s; }
+        .particle:nth-child(2) { left: 20%; animation-delay: 2s; animation-duration: 20s; }
+        .particle:nth-child(3) { left: 30%; animation-delay: 4s; animation-duration: 28s; }
+        .particle:nth-child(4) { left: 40%; animation-delay: 6s; animation-duration: 22s; }
+        .particle:nth-child(5) { left: 50%; animation-delay: 8s; animation-duration: 26s; }
+        .particle:nth-child(6) { left: 60%; animation-delay: 10s; animation-duration: 24s; }
+        .particle:nth-child(7) { left: 70%; animation-delay: 12s; animation-duration: 21s; }
+        .particle:nth-child(8) { left: 80%; animation-delay: 14s; animation-duration: 27s; }
+        .particle:nth-child(9) { left: 90%; animation-delay: 16s; animation-duration: 23s; }
+
+        @keyframes particleFloat {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) scale(1); opacity: 0; }
+        }
+
+        .container {
+            /* Glassmorphism effect */
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 30px;
+            padding: 40px 30px;
+            max-width: 420px;
+            width: 100%;
+            box-shadow:
+                0 25px 50px rgba(0, 0, 0, 0.15),
+                inset 0 0 100px rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Globos 3D realistas */
+        .balloon {
+            position: absolute;
+            width: 45px;
+            height: 55px;
+            border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+            animation: float 4s ease-in-out infinite;
+            box-shadow:
+                inset -10px -10px 20px rgba(0, 0, 0, 0.2),
+                inset 5px 5px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .balloon::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            width: 15px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            filter: blur(3px);
+        }
+
+        .balloon::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 8px solid currentColor;
+        }
+
+        .balloon-string {
+            position: absolute;
+            width: 1px;
+            height: 30px;
+            background: linear-gradient(to bottom, rgba(150, 150, 150, 0.8), rgba(150, 150, 150, 0.3));
+        }
+
+        .balloon-1 {
+            background: linear-gradient(135deg, #ffb6c1 0%, #ff69b4 50%, #ff1493 100%);
+            color: #ff1493;
+            top: 8%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .balloon-2 {
+            background: linear-gradient(135deg, #87ceeb 0%, #4fc3f7 50%, #0288d1 100%);
+            color: #0288d1;
+            top: 12%;
+            right: 8%;
+            animation-delay: 0.5s;
+        }
+
+        .balloon-3 {
+            background: linear-gradient(135deg, #ffb6c1 0%, #ff69b4 50%, #ff1493 100%);
+            color: #ff1493;
+            bottom: 18%;
+            left: 3%;
+            animation-delay: 1s;
+        }
+
+        .balloon-4 {
+            background: linear-gradient(135deg, #87ceeb 0%, #4fc3f7 50%, #0288d1 100%);
+            color: #0288d1;
+            bottom: 22%;
+            right: 5%;
+            animation-delay: 1.5s;
+        }
+
+        .balloon-5 {
+            background: linear-gradient(135deg, #87ceeb 0%, #4fc3f7 50%, #0288d1 100%);
+            color: #0288d1;
+            top: 45%;
+            left: -8px;
+            width: 35px;
+            height: 43px;
+            animation-delay: 2s;
+        }
+
+        .balloon-6 {
+            background: linear-gradient(135deg, #ffb6c1 0%, #ff69b4 50%, #ff1493 100%);
+            color: #ff1493;
+            top: 55%;
+            right: -8px;
+            width: 35px;
+            height: 43px;
+            animation-delay: 2.5s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(-3deg);
+            }
+            50% {
+                transform: translateY(-12px) rotate(3deg);
+            }
+        }
+
+        /* Osito 3D Realista */
+        .bear-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
+            animation: bearBounce 3s ease-in-out infinite;
+            filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.3));
+        }
+
+        @keyframes bearBounce {
+            0%, 100% {
+                transform: translateY(0) rotate(-1deg);
+            }
+            50% {
+                transform: translateY(-8px) rotate(1deg);
+            }
+        }
+
+        .bear {
+            position: relative;
+            width: 140px;
+            height: 160px;
+            transform-style: preserve-3d;
+        }
+
+        /* Orejas */
+        .bear-ear {
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(145deg, #c9a67a 0%, #a0825a 50%, #8b7355 100%);
+            border-radius: 50%;
+            top: 5px;
+            box-shadow:
+                inset -3px -3px 8px rgba(0, 0, 0, 0.3),
+                inset 2px 2px 5px rgba(255, 255, 255, 0.2),
+                0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .bear-ear-left {
+            left: 10px;
+        }
+
+        .bear-ear-right {
+            right: 10px;
+        }
+
+        .bear-ear-inner {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(145deg, #ffcdd2 0%, #f8bbd9 100%);
+            border-radius: 50%;
+            top: 7px;
+            left: 7px;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Cabeza */
+        .bear-head {
+            position: absolute;
+            width: 100px;
+            height: 95px;
+            background: linear-gradient(145deg, #d4a574 0%, #c49a6c 30%, #a0825a 70%, #8b7355 100%);
+            border-radius: 50% 50% 45% 45%;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow:
+                inset -8px -8px 20px rgba(0, 0, 0, 0.25),
+                inset 5px 5px 15px rgba(255, 255, 255, 0.15),
+                0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Cara */
+        .bear-face {
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+        }
+
+        /* Ojos */
+        .bear-eye {
+            position: absolute;
+            width: 14px;
+            height: 16px;
+            background: linear-gradient(145deg, #1a1a1a 0%, #333 100%);
+            border-radius: 50%;
+            box-shadow:
+                inset 2px 2px 4px rgba(255, 255, 255, 0.3),
+                0 2px 4px rgba(0, 0, 0, 0.3);
+            animation: blink 4s ease-in-out infinite;
+        }
+
+        .bear-eye::before {
+            content: '';
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: white;
+            border-radius: 50%;
+            top: 3px;
+            left: 3px;
+        }
+
+        .bear-eye-left {
+            left: 20px;
+            top: 5px;
+        }
+
+        .bear-eye-right {
+            right: 20px;
+            top: 5px;
+        }
+
+        @keyframes blink {
+            0%, 90%, 100% {
+                transform: scaleY(1);
+            }
+            95% {
+                transform: scaleY(0.1);
+            }
+        }
+
+        /* Hocico */
+        .bear-snout {
+            position: absolute;
+            width: 45px;
+            height: 35px;
+            background: linear-gradient(145deg, #f5e6d3 0%, #e8d5c4 50%, #dbc4b0 100%);
+            border-radius: 50%;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow:
+                inset -3px -3px 8px rgba(0, 0, 0, 0.15),
+                inset 2px 2px 5px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Nariz */
+        .bear-nose {
+            position: absolute;
+            width: 18px;
+            height: 14px;
+            background: linear-gradient(145deg, #2c1810 0%, #1a0f0a 100%);
+            border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow:
+                inset 2px 2px 3px rgba(255, 255, 255, 0.2),
+                0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .bear-nose::before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            top: 2px;
+            left: 3px;
+        }
+
+        /* Boca */
+        .bear-mouth {
+            position: absolute;
+            width: 20px;
+            height: 8px;
+            border: 2px solid #2c1810;
+            border-top: none;
+            border-radius: 0 0 50% 50%;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Mejillas sonrosadas */
+        .bear-cheek {
+            position: absolute;
+            width: 18px;
+            height: 10px;
+            background: rgba(255, 182, 193, 0.6);
+            border-radius: 50%;
+            top: 35px;
+            filter: blur(3px);
+        }
+
+        .bear-cheek-left {
+            left: 8px;
+        }
+
+        .bear-cheek-right {
+            right: 8px;
+        }
+
+        /* Cuerpo */
+        .bear-body {
+            position: absolute;
+            width: 85px;
+            height: 70px;
+            background: linear-gradient(145deg, #d4a574 0%, #c49a6c 30%, #a0825a 70%, #8b7355 100%);
+            border-radius: 50% 50% 45% 45%;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow:
+                inset -8px -8px 20px rgba(0, 0, 0, 0.25),
+                inset 5px 5px 15px rgba(255, 255, 255, 0.1),
+                0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Panza */
+        .bear-belly {
+            position: absolute;
+            width: 55px;
+            height: 50px;
+            background: linear-gradient(145deg, #f5e6d3 0%, #e8d5c4 50%, #dbc4b0 100%);
+            border-radius: 50%;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow:
+                inset -3px -3px 8px rgba(0, 0, 0, 0.1),
+                inset 2px 2px 5px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Brazos */
+        .bear-arm {
+            position: absolute;
+            width: 25px;
+            height: 45px;
+            background: linear-gradient(145deg, #c49a6c 0%, #a0825a 50%, #8b7355 100%);
+            border-radius: 30px;
+            bottom: 15px;
+            box-shadow:
+                inset -3px -3px 8px rgba(0, 0, 0, 0.2),
+                inset 2px 2px 5px rgba(255, 255, 255, 0.1),
+                0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .bear-arm-left {
+            left: 8px;
+            transform: rotate(15deg);
+            animation: waveLeft 2.5s ease-in-out infinite;
+        }
+
+        .bear-arm-right {
+            right: 8px;
+            transform: rotate(-15deg);
+            animation: waveRight 2.5s ease-in-out infinite;
+        }
+
+        @keyframes waveLeft {
+            0%, 100% { transform: rotate(15deg); }
+            50% { transform: rotate(25deg); }
+        }
+
+        @keyframes waveRight {
+            0%, 100% { transform: rotate(-15deg); }
+            50% { transform: rotate(-25deg); }
+        }
+
+        /* Patas */
+        .bear-foot {
+            position: absolute;
+            width: 28px;
+            height: 20px;
+            background: linear-gradient(145deg, #a0825a 0%, #8b7355 100%);
+            border-radius: 50%;
+            bottom: -5px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .bear-foot-left {
+            left: 20px;
+        }
+
+        .bear-foot-right {
+            right: 20px;
+        }
+
+        /* Contenido */
+        .title {
+            text-align: center;
+            font-size: 1.1em;
+            color: rgba(100, 100, 100, 0.9);
+            margin-bottom: 5px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 1.9em;
+            background: linear-gradient(90deg, #ff69b4, #4fc3f7, #ff69b4);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shine 3s linear infinite;
+            margin-bottom: 5px;
+            font-weight: 700;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        .question {
+            text-align: center;
+            font-size: 1.8em;
+            margin: 15px 0;
+            animation: pulse 2s ease-in-out infinite;
+            filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        .question-mark-blue {
+            background: linear-gradient(180deg, #64b5f6 0%, #1976d2 50%, #0d47a1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 2px 3px rgba(25, 118, 210, 0.4));
+        }
+
+        .question-mark-pink {
+            background: linear-gradient(180deg, #f48fb1 0%, #e91e63 50%, #c2185b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 2px 3px rgba(233, 30, 99, 0.4));
+        }
+
+        .nino {
+            background: linear-gradient(180deg, #90caf9 0%, #42a5f5 25%, #1976d2 50%, #1565c0 75%, #0d47a1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 2px 4px rgba(25, 118, 210, 0.5));
+            text-shadow: none;
+        }
+
+        .nina {
+            background: linear-gradient(180deg, #f8bbd9 0%, #f48fb1 25%, #e91e63 50%, #d81b60 75%, #c2185b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 2px 4px rgba(233, 30, 99, 0.5));
+            text-shadow: none;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .family-name {
+            text-align: center;
+            font-size: 2em;
+            color: rgba(80, 80, 80, 0.9);
+            font-weight: 400;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-family: 'Great Vibes', cursive;
+        }
+
+        .details {
+            /* Glassmorphism interno */
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            font-size: 0.95em;
+            color: rgba(70, 70, 70, 0.95);
+        }
+
+        .detail-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .detail-icon {
+            font-size: 1.2em;
+            margin-right: 10px;
+            min-width: 25px;
+        }
+
+        .detail-text {
+            line-height: 1.4;
+        }
+
+        .detail-text strong {
+            color: rgba(50, 50, 50, 0.95);
+        }
+
+        .maps-link {
+            color: #1976d2;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .maps-link:hover {
+            color: #0d47a1;
+            text-decoration: underline;
+        }
+
+        .maps-link::after {
+            content: '→';
+            transition: transform 0.3s ease;
+        }
+
+        .maps-link:hover::after {
+            transform: translateX(3px);
+        }
+
+        .confirm-section {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .confirm-text {
+            font-size: 0.9em;
+            color: rgba(100, 100, 100, 0.9);
+            margin-bottom: 12px;
+        }
+
+        .confirm-deadline {
+            font-size: 0.85em;
+            color: #e91e63;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            color: white;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow:
+                0 8px 25px rgba(37, 211, 102, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow:
+                0 12px 35px rgba(37, 211, 102, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow:
+                    0 8px 25px rgba(37, 211, 102, 0.4),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            }
+            50% {
+                box-shadow:
+                    0 8px 35px rgba(37, 211, 102, 0.7),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            }
+        }
+
+        .whatsapp-icon {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.85em;
+            color: rgba(120, 120, 120, 0.9);
+        }
+
+        /* Corazones flotantes */
+        .hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 14px;
+            opacity: 0.6;
+            animation: heartFloat 6s ease-in-out infinite;
+        }
+
+        .heart-1 { top: 3%; left: 25%; animation-delay: 0s; color: #ff69b4; }
+        .heart-2 { top: 6%; right: 30%; animation-delay: 1s; color: #4fc3f7; }
+        .heart-3 { bottom: 12%; left: 20%; animation-delay: 2s; color: #ff69b4; }
+        .heart-4 { bottom: 8%; right: 25%; animation-delay: 3s; color: #4fc3f7; }
+
+        @keyframes heartFloat {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateY(-10px) scale(1.2);
+                opacity: 1;
+            }
+        }
+
+        /* Carrusel de cita bíblica */
+        .bible-carousel {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 15px;
+            padding: 15px 20px;
+            margin: 20px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 120px;
+        }
+
+        .bible-verses {
+            position: relative;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bible-verse {
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.5s ease;
+            font-size: 0.85em;
+            color: rgba(60, 60, 60, 0.95);
+            line-height: 1.5;
+            font-style: italic;
+            padding: 0 10px;
+        }
+
+        .bible-verse.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .bible-verse.exit {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+
+        .bible-reference {
+            font-size: 0.8em;
+            color: rgba(100, 100, 100, 0.9);
+            font-weight: 600;
+            margin-top: 10px;
+            font-style: normal;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(150, 150, 150, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background: linear-gradient(135deg, #ff69b4, #4fc3f7);
+            transform: scale(1.2);
+        }
+
+        /* Spotify player */
+        .spotify-section {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .spotify-title {
+            font-size: 0.85em;
+            color: rgba(100, 100, 100, 0.9);
+            margin-bottom: 10px;
+        }
+
+        .spotify-embed {
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        /* Créditos */
+        .credits {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            font-size: 0.7em;
+            color: rgba(120, 120, 120, 0.8);
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .credits a {
+            color: rgba(100, 100, 100, 0.9);
+            text-decoration: none;
+        }
+
+        .credits a:hover {
+            text-decoration: underline;
+        }
+
+        /* Selector de personas */
+        .attendees-section {
+            margin-bottom: 15px;
+        }
+
+        .attendees-label {
+            font-size: 0.85em;
+            color: rgba(80, 80, 80, 0.9);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .attendees-select {
+            padding: 10px 15px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(5px);
+            font-size: 1em;
+            color: rgba(60, 60, 60, 0.95);
+            cursor: pointer;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .attendees-select:focus {
+            border-color: rgba(233, 30, 99, 0.5);
+            box-shadow: 0 0 10px rgba(233, 30, 99, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Partículas de fondo -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <div class="container">
+        <!-- Globos 3D -->
+        <div class="balloon balloon-1"></div>
+        <div class="balloon balloon-2"></div>
+        <div class="balloon balloon-3"></div>
+        <div class="balloon balloon-4"></div>
+        <div class="balloon balloon-5"></div>
+        <div class="balloon balloon-6"></div>
+
+        <!-- Corazones -->
+        <div class="hearts">
+            <span class="heart heart-1">💕</span>
+            <span class="heart heart-2">💕</span>
+            <span class="heart heart-3">💕</span>
+            <span class="heart heart-4">💕</span>
+        </div>
+
+        <!-- Osito 3D Realista -->
+        <div class="bear-container">
+            <div class="bear">
+                <!-- Orejas -->
+                <div class="bear-ear bear-ear-left">
+                    <div class="bear-ear-inner"></div>
+                </div>
+                <div class="bear-ear bear-ear-right">
+                    <div class="bear-ear-inner"></div>
+                </div>
+
+                <!-- Cabeza -->
+                <div class="bear-head">
+                    <div class="bear-face">
+                        <!-- Ojos -->
+                        <div class="bear-eye bear-eye-left"></div>
+                        <div class="bear-eye bear-eye-right"></div>
+
+                        <!-- Mejillas -->
+                        <div class="bear-cheek bear-cheek-left"></div>
+                        <div class="bear-cheek bear-cheek-right"></div>
+
+                        <!-- Hocico -->
+                        <div class="bear-snout"></div>
+
+                        <!-- Nariz -->
+                        <div class="bear-nose"></div>
+
+                        <!-- Boca -->
+                        <div class="bear-mouth"></div>
+                    </div>
+                </div>
+
+                <!-- Cuerpo -->
+                <div class="bear-body">
+                    <div class="bear-belly"></div>
+                </div>
+
+                <!-- Brazos -->
+                <div class="bear-arm bear-arm-left"></div>
+                <div class="bear-arm bear-arm-right"></div>
+
+                <!-- Patas -->
+                <div class="bear-foot bear-foot-left"></div>
+                <div class="bear-foot bear-foot-right"></div>
+            </div>
+        </div>
+
+        <!-- Contenido -->
+        <p class="title">Te invitamos a la</p>
+        <h1 class="main-title">Revelación de Sexo</h1>
+        <p class="question"><span class="question-mark-blue">¿</span><span class="nino">Niño</span> o <span class="nina">Niña</span><span class="question-mark-pink">?</span></p>
+        <p class="family-name">Familia Aquino Enriquez</p>
+
+        <!-- Carrusel bíblico -->
+        <div class="bible-carousel">
+            <div class="bible-verses">
+                <div class="bible-verse active" data-index="0">
+                    "Porque tú formaste mis entrañas; Tú me hiciste en el vientre de mi madre."
+                </div>
+                <div class="bible-verse" data-index="1">
+                    "Te alabaré; porque formidables, maravillosas son tus obras; Estoy maravillado, Y mi alma lo sabe muy bien."
+                </div>
+                <div class="bible-verse" data-index="2">
+                    "No fue encubierto de ti mi cuerpo, Bien que en oculto fui formado, Y entretejido en lo más profundo de la tierra."
+                </div>
+                <div class="bible-verse" data-index="3">
+                    "Mi embrión vieron tus ojos, Y en tu libro estaban escritas todas aquellas cosas Que fueron luego formadas, Sin faltar una de ellas."
+                </div>
+            </div>
+            <p class="bible-reference">Salmo 139:13-16 (RV1960)</p>
+            <div class="carousel-dots">
+                <span class="carousel-dot active" data-index="0"></span>
+                <span class="carousel-dot" data-index="1"></span>
+                <span class="carousel-dot" data-index="2"></span>
+                <span class="carousel-dot" data-index="3"></span>
+            </div>
+        </div>
+
+        <div class="details">
+            <div class="detail-item">
+                <span class="detail-icon">📅</span>
+                <span class="detail-text"><strong>Fecha:</strong> 6 de Diciembre, 2025</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-icon">⏰</span>
+                <span class="detail-text"><strong>Hora:</strong> 2:30 PM</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-icon">🍽️</span>
+                <span class="detail-text"><strong>Servicio de Alimentos:</strong> 3:00 PM - 4:00 PM</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-icon">📍</span>
+                <span class="detail-text"><strong>Lugar:</strong> Privada Marcos, Edificio E, Depto. 501, Colinas de San José 181, Tlalnepantla, Edo. de Méx.</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-icon">🗺️</span>
+                <span class="detail-text"><a href="https://maps.app.goo.gl/TPXvbQa6QijmEKCU8" target="_blank" class="maps-link">Llévame al evento</a></span>
+            </div>
+        </div>
+
+        <div class="confirm-section">
+            <p class="confirm-text">¡Tu presencia es muy importante para nosotros!</p>
+            <p class="confirm-deadline">Confirmar antes del 1 de Diciembre</p>
+
+            <div class="attendees-section">
+                <label class="attendees-label">¿Cuántas personas asistirán?</label>
+                <select id="attendees" class="attendees-select">
+                    <option value="1">1 persona</option>
+                    <option value="2">2 personas</option>
+                    <option value="3">3 personas</option>
+                    <option value="4">4 personas</option>
+                    <option value="5">5 personas</option>
+                    <option value="6">6 personas</option>
+                    <option value="7">7 personas</option>
+                    <option value="8">8 personas</option>
+                    <option value="9">9 personas</option>
+                    <option value="10">10 personas</option>
+                </select>
+            </div>
+
+            <a href="#" onclick="confirmAttendance()" class="whatsapp-btn">
+                <svg class="whatsapp-icon" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                Confirmar Asistencia
+            </a>
+        </div>
+
+        <!-- Spotify -->
+        <div class="spotify-section">
+            <p class="spotify-title">Escucha nuestra canción</p>
+            <iframe
+                class="spotify-embed"
+                src="https://open.spotify.com/embed/track/6pBLeRIG81V0IN290ccW6W?utm_source=generator&theme=0"
+                width="100%"
+                height="152"
+                frameBorder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy">
+            </iframe>
+        </div>
+
+        <p class="footer">¡Los esperamos con mucha ilusión! 💕</p>
+
+        <div class="credits">
+            Música: Contenido de Spotify. Todos los derechos de la música pertenecen a sus respectivos autores y artistas.
+            <br>
+            <a href="https://open.spotify.com/track/6pBLeRIG81V0IN290ccW6W" target="_blank">Escuchar en Spotify</a>
+        </div>
+    </div>
+
+    <script>
+        // Carrusel automático
+        const verses = document.querySelectorAll('.bible-verse');
+        const dots = document.querySelectorAll('.carousel-dot');
+        let currentIndex = 0;
+
+        function showVerse(index) {
+            verses.forEach((verse, i) => {
+                verse.classList.remove('active', 'exit');
+                if (i === currentIndex) {
+                    verse.classList.add('exit');
+                }
+                if (i === index) {
+                    verse.classList.add('active');
+                }
+            });
+
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+
+            currentIndex = index;
+        }
+
+        function nextVerse() {
+            const next = (currentIndex + 1) % verses.length;
+            showVerse(next);
+        }
+
+        // Cambiar cada 10 segundos
+        setInterval(nextVerse, 10000);
+
+        // Click en dots
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const index = parseInt(dot.dataset.index);
+                showVerse(index);
+            });
+        });
+
+        // Confirmar asistencia con número de personas
+        function confirmAttendance() {
+            const attendees = document.getElementById('attendees').value;
+            const message = `¡Hola! Confirmo mi asistencia a la Revelación Aquino Enriquez 🎀💙\n\nTotal de personas que asistiremos: ${attendees}`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/525540678385?text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
